@@ -1,0 +1,42 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.yunus.qirimli",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "6.8.0",
+    "applicationType": "monolith",
+    "baseName": "taskinator",
+    "packageName": "com.yunus.qirimli",
+    "packageFolder": "com/yunus/qirimli",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "OWFlM2ZmYWVjZTQ4YjM2NjBhYWE3YzM4ODg0ZGU3MjIzNGM2MzJmMTEyYmJhZjdmYTAzMGY3ZWRmYjJkOTM1MWU3YzllYThlMDM2YjVhODJkZTZiMTg3Yzg4M2NkM2ZkYjdiZWNlMGI5MGRmYjNmMDZhNTk4Yjc3ZjliMTI5ZGE=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "react",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "creationTimestamp": 1583783464988,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": ["en", "ua"],
+    "blueprints": []
+  }
+}
