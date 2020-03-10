@@ -1,0 +1,31 @@
+{
+    "name": "CommentLike",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "comment",
+            "otherEntityRelationshipName": "likes",
+            "relationshipName": "comment",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "applicationUser",
+            "otherEntityRelationshipName": "commentLikes",
+            "relationshipName": "applicationUser",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200310175100",
+    "entityTableName": "comment_like",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

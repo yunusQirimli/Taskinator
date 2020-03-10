@@ -1,0 +1,42 @@
+{
+    "name": "Board",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "boardColumn",
+            "otherEntityRelationshipName": "board",
+            "relationshipName": "boardColumns"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "applicationUser",
+            "otherEntityRelationshipName": "boards",
+            "relationshipName": "applicationUser",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "project",
+            "otherEntityRelationshipName": "boards",
+            "relationshipName": "project",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200310174700",
+    "entityTableName": "board",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

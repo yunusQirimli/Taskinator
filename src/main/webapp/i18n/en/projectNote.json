@@ -1,0 +1,23 @@
+{
+  "taskinatorApp": {
+    "projectNote": {
+      "home": {
+        "title": "Project Notes",
+        "createLabel": "Create a new Project Note",
+        "createOrEditLabel": "Create or edit a Project Note",
+        "notFound": "No Project Notes found"
+      },
+      "created": "A new Project Note is created with identifier {{ param }}",
+      "updated": "A Project Note is updated with identifier {{ param }}",
+      "deleted": "A Project Note is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Project Note {{ id }}?"
+      },
+      "detail": {
+        "title": "Project Note"
+      },
+      "content": "Content",
+      "project": "Project"
+    }
+  }
+}

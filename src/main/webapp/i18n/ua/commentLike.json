@@ -1,0 +1,23 @@
+{
+  "taskinatorApp": {
+    "commentLike": {
+      "home": {
+        "title": "Comment Likes",
+        "createLabel": "Створити новий Comment Like",
+        "createOrEditLabel": "Створити чи редагувати Comment Like",
+        "notFound": "No Comment Likes found"
+      },
+      "created": "Новий Comment Like створений з ідентифікатором {{ param }}",
+      "updated": "Comment Like оновлений з ідентифікатором {{ param }}",
+      "deleted": "Comment Like видалений з ідентифікатором {{ param }}",
+      "delete": {
+        "question": "Ви впевнені, що хочете видалити Comment Like {{ id }}?"
+      },
+      "detail": {
+        "title": "Comment Like"
+      },
+      "comment": "Comment",
+      "applicationUser": "Application User"
+    }
+  }
+}

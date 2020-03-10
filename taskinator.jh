@@ -1,0 +1,105 @@
+
+
+enum Color {
+	RED, GREEN
+}
+
+entity ApplicationUser {
+
+}
+
+entity Team {
+	name String
+}
+
+entity ProjectState {
+	name String
+}
+
+entity ProjectNote {
+	content String
+}
+
+entity Project {
+	name String
+  	color Color
+    createDate LocalDate
+	modificationDate LocalDate
+    closeDate LocalDate
+}
+
+entity Board {
+	name String
+}
+
+entity BoardColumn {
+	name String
+}
+
+entity Task {
+	name String
+    description String
+    color Color
+    createDate LocalDate
+	modificationDate LocalDate
+    dueDate LocalDate
+    startDate LocalDate
+    completeDate LocalDate
+}
+
+entity Comment {
+	content String
+    createDate LocalDate
+}
+
+entity CommentLike {
+
+}
+
+relationship OneToOne {
+	ApplicationUser{user} to User
+}
+
+relationship OneToMany {
+	ApplicationUser{boards} to Board{applicationUser}
+}
+
+relationship OneToMany {
+	Task{subTasks} to Task{parentTask}
+}
+
+relationship OneToMany {
+	Project{boards} to Board{project}
+}
+
+relationship OneToMany {
+	Board{boardColumns} to BoardColumn{board}
+}
+
+relationship OneToMany {
+	BoardColumn{tasks} to Task{BoardColumn},
+    ApplicationUser{tasks} to Task{applicationUser}
+}
+
+relationship ManyToOne {
+	Comment{task(name)} to Task,
+    Comment{applicationUser} to ApplicationUser
+}
+
+relationship OneToMany {
+	Comment{likes} to CommentLike{comment},
+    ApplicationUser{commentLikes} to CommentLike{applicationUser}
+}
+
+relationship ManyToOne {
+	Project{projectState} to ProjectState,
+}
+
+relationship OneToMany {
+	Project{notes} to ProjectNote{project}
+}
+
+relationship ManyToMany {
+	ApplicationUser{teams} to Team{applicationUsers},
+    ApplicationUser{projects} to Project{applicationUsers}
+}

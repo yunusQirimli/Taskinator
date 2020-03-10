@@ -1,0 +1,66 @@
+{
+    "name": "Project",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "color",
+            "fieldType": "Color",
+            "fieldValues": "RED,GREEN"
+        },
+        {
+            "fieldName": "createDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "modificationDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "closeDate",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "board",
+            "otherEntityRelationshipName": "project",
+            "relationshipName": "boards"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "projectNote",
+            "otherEntityRelationshipName": "project",
+            "relationshipName": "notes"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "projectState",
+            "otherEntityRelationshipName": "project",
+            "relationshipName": "projectState",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "applicationUser",
+            "otherEntityRelationshipName": "projects",
+            "relationshipName": "applicationUsers",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20200310174600",
+    "entityTableName": "project",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

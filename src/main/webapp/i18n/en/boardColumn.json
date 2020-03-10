@@ -1,0 +1,24 @@
+{
+  "taskinatorApp": {
+    "boardColumn": {
+      "home": {
+        "title": "Board Columns",
+        "createLabel": "Create a new Board Column",
+        "createOrEditLabel": "Create or edit a Board Column",
+        "notFound": "No Board Columns found"
+      },
+      "created": "A new Board Column is created with identifier {{ param }}",
+      "updated": "A Board Column is updated with identifier {{ param }}",
+      "deleted": "A Board Column is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Board Column {{ id }}?"
+      },
+      "detail": {
+        "title": "Board Column"
+      },
+      "name": "Name",
+      "tasks": "Tasks",
+      "board": "Board"
+    }
+  }
+}

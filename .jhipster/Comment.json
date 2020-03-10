@@ -1,0 +1,46 @@
+{
+    "name": "Comment",
+    "fields": [
+        {
+            "fieldName": "content",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createDate",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "commentLike",
+            "otherEntityRelationshipName": "comment",
+            "relationshipName": "likes"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "task",
+            "otherEntityRelationshipName": "comment",
+            "relationshipName": "task",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "applicationUser",
+            "otherEntityRelationshipName": "comment",
+            "relationshipName": "applicationUser",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200310175000",
+    "entityTableName": "comment",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

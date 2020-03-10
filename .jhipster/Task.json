@@ -1,0 +1,78 @@
+{
+    "name": "Task",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "color",
+            "fieldType": "Color",
+            "fieldValues": "RED,GREEN"
+        },
+        {
+            "fieldName": "createDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "modificationDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "dueDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "startDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "completeDate",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "task",
+            "otherEntityRelationshipName": "parentTask",
+            "relationshipName": "subTasks"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "task",
+            "otherEntityRelationshipName": "subTasks",
+            "relationshipName": "parentTask",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "boardColumn",
+            "otherEntityRelationshipName": "tasks",
+            "relationshipName": "boardColumn",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "applicationUser",
+            "otherEntityRelationshipName": "tasks",
+            "relationshipName": "applicationUser",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200310174900",
+    "entityTableName": "task",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

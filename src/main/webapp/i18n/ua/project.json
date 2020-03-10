@@ -1,0 +1,30 @@
+{
+  "taskinatorApp": {
+    "project": {
+      "home": {
+        "title": "Projects",
+        "createLabel": "Створити новий Project",
+        "createOrEditLabel": "Створити чи редагувати Project",
+        "notFound": "No Projects found"
+      },
+      "created": "Новий Project створений з ідентифікатором {{ param }}",
+      "updated": "Project оновлений з ідентифікатором {{ param }}",
+      "deleted": "Project видалений з ідентифікатором {{ param }}",
+      "delete": {
+        "question": "Ви впевнені, що хочете видалити Project {{ id }}?"
+      },
+      "detail": {
+        "title": "Project"
+      },
+      "name": "Name",
+      "color": "Color",
+      "createDate": "Create Date",
+      "modificationDate": "Modification Date",
+      "closeDate": "Close Date",
+      "boards": "Boards",
+      "notes": "Notes",
+      "projectState": "Project State",
+      "applicationUsers": "Application Users"
+    }
+  }
+}

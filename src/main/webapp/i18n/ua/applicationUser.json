@@ -1,0 +1,27 @@
+{
+  "taskinatorApp": {
+    "applicationUser": {
+      "home": {
+        "title": "Application Users",
+        "createLabel": "Створити новий Application User",
+        "createOrEditLabel": "Створити чи редагувати Application User",
+        "notFound": "No Application Users found"
+      },
+      "created": "Новий Application User створений з ідентифікатором {{ param }}",
+      "updated": "Application User оновлений з ідентифікатором {{ param }}",
+      "deleted": "Application User видалений з ідентифікатором {{ param }}",
+      "delete": {
+        "question": "Ви впевнені, що хочете видалити Application User {{ id }}?"
+      },
+      "detail": {
+        "title": "Application User"
+      },
+      "user": "User",
+      "boards": "Boards",
+      "tasks": "Tasks",
+      "commentLikes": "Comment Likes",
+      "teams": "Teams",
+      "projects": "Projects"
+    }
+  }
+}
