@@ -56,12 +56,12 @@ export const ApplicationUser = (props: IApplicationUserProps) => {
                       {applicationUser.id}
                     </Button>
                   </td>
-                  <td>{applicationUser.user ? applicationUser.user.id : ''}</td>
+                  <td>{applicationUser.user ? applicationUser.user.email : ''}</td>
                   <td>
                     {applicationUser.teams
                       ? applicationUser.teams.map((val, j) => (
                           <span key={j}>
-                            <Link to={`team/${val.id}`}>{val.id}</Link>
+                            <Link to={`team/${val.id}`}>{val.name}</Link>
                             {j === applicationUser.teams.length - 1 ? '' : ', '}
                           </span>
                         ))
@@ -71,7 +71,7 @@ export const ApplicationUser = (props: IApplicationUserProps) => {
                     {applicationUser.projects
                       ? applicationUser.projects.map((val, j) => (
                           <span key={j}>
-                            <Link to={`project/${val.id}`}>{val.id}</Link>
+                            <Link to={`project/${val.id}`}>{val.name}</Link>
                             {j === applicationUser.projects.length - 1 ? '' : ', '}
                           </span>
                         ))

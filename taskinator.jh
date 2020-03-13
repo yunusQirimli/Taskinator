@@ -57,49 +57,49 @@ entity CommentLike {
 }
 
 relationship OneToOne {
-	ApplicationUser{user} to User
+	ApplicationUser{user(email)} to User
 }
 
 relationship OneToMany {
-	ApplicationUser{boards} to Board{applicationUser}
+	ApplicationUser{boards(name)} to Board{applicationUser}
 }
 
 relationship OneToMany {
-	Task{subTasks} to Task{parentTask}
+	Task{subTasks(name)} to Task{parentTask(name)}
 }
 
 relationship OneToMany {
-	Project{boards} to Board{project}
+	Project{boards(name)} to Board{project(name)}
 }
 
 relationship OneToMany {
-	Board{boardColumns} to BoardColumn{board}
+	Board{boardColumns(name)} to BoardColumn{board(name)}
 }
 
 relationship OneToMany {
-	BoardColumn{tasks} to Task{BoardColumn},
-    ApplicationUser{tasks} to Task{applicationUser}
+	BoardColumn{tasks(name)} to Task{BoardColumn(name)},
+    ApplicationUser{tasks(name)} to Task{applicationUser}
 }
 
 relationship ManyToOne {
-	Comment{task(name)} to Task,
     Comment{applicationUser} to ApplicationUser
 }
 
 relationship OneToMany {
+	Task{comments} to Comment{task(name)},
 	Comment{likes} to CommentLike{comment},
     ApplicationUser{commentLikes} to CommentLike{applicationUser}
 }
 
 relationship ManyToOne {
-	Project{projectState} to ProjectState,
+	Project{projectState(name)} to ProjectState
 }
 
 relationship OneToMany {
-	Project{notes} to ProjectNote{project}
+	Project{notes} to ProjectNote{project(name)}
 }
 
 relationship ManyToMany {
-	ApplicationUser{teams} to Team{applicationUsers},
-    ApplicationUser{projects} to Project{applicationUsers}
+	ApplicationUser{teams(name)} to Team{applicationUsers},
+    ApplicationUser{projects(name)} to Project{applicationUsers}
 }

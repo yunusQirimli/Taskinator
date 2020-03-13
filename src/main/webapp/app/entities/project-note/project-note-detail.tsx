@@ -34,7 +34,7 @@ export const ProjectNoteDetail = (props: IProjectNoteDetailProps) => {
           <dt>
             <Translate contentKey="taskinatorApp.projectNote.project">Project</Translate>
           </dt>
-          <dd>{projectNoteEntity.project ? projectNoteEntity.project.id : ''}</dd>
+          <dd>{projectNoteEntity.project ? projectNoteEntity.project.name : ''}</dd>
         </dl>
         <Button tag={Link} to="/project-note" replace color="info">
           <FontAwesomeIcon icon="arrow-left" />{' '}

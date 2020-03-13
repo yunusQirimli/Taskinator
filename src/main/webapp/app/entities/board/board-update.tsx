@@ -114,7 +114,7 @@ export const BoardUpdate = (props: IBoardUpdateProps) => {
                   {projects
                     ? projects.map(otherEntity => (
                         <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.id}
+                          {otherEntity.name}
                         </option>
                       ))
                     : null}

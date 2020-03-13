@@ -54,7 +54,7 @@ export const ProjectNote = (props: IProjectNoteProps) => {
                     </Button>
                   </td>
                   <td>{projectNote.content}</td>
-                  <td>{projectNote.project ? <Link to={`project/${projectNote.project.id}`}>{projectNote.project.id}</Link> : ''}</td>
+                  <td>{projectNote.project ? <Link to={`project/${projectNote.project.id}`}>{projectNote.project.name}</Link> : ''}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${projectNote.id}`} color="info" size="sm">

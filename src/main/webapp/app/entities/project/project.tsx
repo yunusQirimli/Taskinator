@@ -79,7 +79,7 @@ export const Project = (props: IProjectProps) => {
                     <TextFormat type="date" value={project.closeDate} format={APP_LOCAL_DATE_FORMAT} />
                   </td>
                   <td>
-                    {project.projectState ? <Link to={`project-state/${project.projectState.id}`}>{project.projectState.id}</Link> : ''}
+                    {project.projectState ? <Link to={`project-state/${project.projectState.id}`}>{project.projectState.name}</Link> : ''}
                   </td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">

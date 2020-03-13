@@ -34,7 +34,7 @@ export const BoardColumnDetail = (props: IBoardColumnDetailProps) => {
           <dt>
             <Translate contentKey="taskinatorApp.boardColumn.board">Board</Translate>
           </dt>
-          <dd>{boardColumnEntity.board ? boardColumnEntity.board.id : ''}</dd>
+          <dd>{boardColumnEntity.board ? boardColumnEntity.board.name : ''}</dd>
         </dl>
         <Button tag={Link} to="/board-column" replace color="info">
           <FontAwesomeIcon icon="arrow-left" />{' '}

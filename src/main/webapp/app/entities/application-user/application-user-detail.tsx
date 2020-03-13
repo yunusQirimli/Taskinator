@@ -28,7 +28,7 @@ export const ApplicationUserDetail = (props: IApplicationUserDetailProps) => {
           <dt>
             <Translate contentKey="taskinatorApp.applicationUser.user">User</Translate>
           </dt>
-          <dd>{applicationUserEntity.user ? applicationUserEntity.user.id : ''}</dd>
+          <dd>{applicationUserEntity.user ? applicationUserEntity.user.email : ''}</dd>
           <dt>
             <Translate contentKey="taskinatorApp.applicationUser.teams">Teams</Translate>
           </dt>
@@ -36,7 +36,7 @@ export const ApplicationUserDetail = (props: IApplicationUserDetailProps) => {
             {applicationUserEntity.teams
               ? applicationUserEntity.teams.map((val, i) => (
                   <span key={val.id}>
-                    <a>{val.id}</a>
+                    <a>{val.name}</a>
                     {i === applicationUserEntity.teams.length - 1 ? '' : ', '}
                   </span>
                 ))
@@ -49,7 +49,7 @@ export const ApplicationUserDetail = (props: IApplicationUserDetailProps) => {
             {applicationUserEntity.projects
               ? applicationUserEntity.projects.map((val, i) => (
                   <span key={val.id}>
-                    <a>{val.id}</a>
+                    <a>{val.name}</a>
                     {i === applicationUserEntity.projects.length - 1 ? '' : ', '}
                   </span>
                 ))

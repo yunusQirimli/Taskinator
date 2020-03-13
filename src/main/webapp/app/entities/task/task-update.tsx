@@ -148,7 +148,7 @@ export const TaskUpdate = (props: ITaskUpdateProps) => {
                   {tasks
                     ? tasks.map(otherEntity => (
                         <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.id}
+                          {otherEntity.name}
                         </option>
                       ))
                     : null}
@@ -163,7 +163,7 @@ export const TaskUpdate = (props: ITaskUpdateProps) => {
                   {boardColumns
                     ? boardColumns.map(otherEntity => (
                         <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.id}
+                          {otherEntity.name}
                         </option>
                       ))
                     : null}

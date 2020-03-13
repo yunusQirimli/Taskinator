@@ -35,11 +35,11 @@ public class Comment implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties("comments")
-    private Task task;
+    private ApplicationUser applicationUser;
 
     @ManyToOne
     @JsonIgnoreProperties("comments")
-    private ApplicationUser applicationUser;
+    private Task task;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -101,19 +101,6 @@ public class Comment implements Serializable {
         this.likes = commentLikes;
     }
 
-    public Task getTask() {
-        return task;
-    }
-
-    public Comment task(Task task) {
-        this.task = task;
-        return this;
-    }
-
-    public void setTask(Task task) {
-        this.task = task;
-    }
-
     public ApplicationUser getApplicationUser() {
         return applicationUser;
     }
@@ -125,6 +112,19 @@ public class Comment implements Serializable {
 
     public void setApplicationUser(ApplicationUser applicationUser) {
         this.applicationUser = applicationUser;
+    }
+
+    public Task getTask() {
+        return task;
+    }
+
+    public Comment task(Task task) {
+        this.task = task;
+        return this;
+    }
+
+    public void setTask(Task task) {
+        this.task = task;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

@@ -43,18 +43,24 @@
             "relationshipName": "subTasks"
         },
         {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "comment",
+            "otherEntityRelationshipName": "task",
+            "relationshipName": "comments"
+        },
+        {
             "relationshipType": "many-to-one",
             "otherEntityName": "task",
             "otherEntityRelationshipName": "subTasks",
             "relationshipName": "parentTask",
-            "otherEntityField": "id"
+            "otherEntityField": "name"
         },
         {
             "relationshipType": "many-to-one",
             "otherEntityName": "boardColumn",
             "otherEntityRelationshipName": "tasks",
             "relationshipName": "boardColumn",
-            "otherEntityField": "id"
+            "otherEntityField": "name"
         },
         {
             "relationshipType": "many-to-one",

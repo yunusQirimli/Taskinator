@@ -12,7 +12,7 @@
             "otherEntityName": "project",
             "otherEntityRelationshipName": "notes",
             "relationshipName": "project",
-            "otherEntityField": "id"
+            "otherEntityField": "name"
         }
     ],
     "changelogDate": "20200310174500",

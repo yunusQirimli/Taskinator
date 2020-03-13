@@ -18,7 +18,7 @@
             "otherEntityName": "board",
             "otherEntityRelationshipName": "boardColumns",
             "relationshipName": "board",
-            "otherEntityField": "id"
+            "otherEntityField": "name"
         }
     ],
     "changelogDate": "20200310174800",

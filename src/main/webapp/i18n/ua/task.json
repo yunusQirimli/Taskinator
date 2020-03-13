@@ -25,6 +25,7 @@
       "startDate": "Start Date",
       "completeDate": "Complete Date",
       "subTasks": "Sub Tasks",
+      "comments": "Comments",
       "parentTask": "Parent Task",
       "boardColumn": "Board Column",
       "applicationUser": "Application User"

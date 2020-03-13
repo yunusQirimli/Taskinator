@@ -43,10 +43,10 @@ export const Comment = (props: ICommentProps) => {
                   <Translate contentKey="taskinatorApp.comment.createDate">Create Date</Translate>
                 </th>
                 <th>
-                  <Translate contentKey="taskinatorApp.comment.task">Task</Translate>
+                  <Translate contentKey="taskinatorApp.comment.applicationUser">Application User</Translate>
                 </th>
                 <th>
-                  <Translate contentKey="taskinatorApp.comment.applicationUser">Application User</Translate>
+                  <Translate contentKey="taskinatorApp.comment.task">Task</Translate>
                 </th>
                 <th />
               </tr>
@@ -63,7 +63,6 @@ export const Comment = (props: ICommentProps) => {
                   <td>
                     <TextFormat type="date" value={comment.createDate} format={APP_LOCAL_DATE_FORMAT} />
                   </td>
-                  <td>{comment.task ? <Link to={`task/${comment.task.id}`}>{comment.task.name}</Link> : ''}</td>
                   <td>
                     {comment.applicationUser ? (
                       <Link to={`application-user/${comment.applicationUser.id}`}>{comment.applicationUser.id}</Link>
@@ -71,6 +70,7 @@ export const Comment = (props: ICommentProps) => {
                       ''
                     )}
                   </td>
+                  <td>{comment.task ? <Link to={`task/${comment.task.id}`}>{comment.task.name}</Link> : ''}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${comment.id}`} color="info" size="sm">

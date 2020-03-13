@@ -95,7 +95,7 @@ export const BoardColumnUpdate = (props: IBoardColumnUpdateProps) => {
                   {boards
                     ? boards.map(otherEntity => (
                         <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.id}
+                          {otherEntity.name}
                         </option>
                       ))
                     : null}

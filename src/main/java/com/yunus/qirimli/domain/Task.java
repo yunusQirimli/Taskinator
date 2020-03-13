@@ -54,6 +54,9 @@ public class Task implements Serializable {
     @OneToMany(mappedBy = "parentTask")
     private Set<Task> subTasks = new HashSet<>();
 
+    @OneToMany(mappedBy = "task")
+    private Set<Comment> comments = new HashSet<>();
+
     @ManyToOne
     @JsonIgnoreProperties("subTasks")
     private Task parentTask;
@@ -202,6 +205,31 @@ public class Task implements Serializable {
 
     public void setSubTasks(Set<Task> tasks) {
         this.subTasks = tasks;
+    }
+
+    public Set<Comment> getComments() {
+        return comments;
+    }
+
+    public Task comments(Set<Comment> comments) {
+        this.comments = comments;
+        return this;
+    }
+
+    public Task addComments(Comment comment) {
+        this.comments.add(comment);
+        comment.setTask(this);
+        return this;
+    }
+
+    public Task removeComments(Comment comment) {
+        this.comments.remove(comment);
+        comment.setTask(null);
+        return this;
+    }
+
+    public void setComments(Set<Comment> comments) {
+        this.comments = comments;
     }
 
     public Task getParentTask() {

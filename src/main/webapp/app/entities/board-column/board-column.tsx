@@ -54,7 +54,7 @@ export const BoardColumn = (props: IBoardColumnProps) => {
                     </Button>
                   </td>
                   <td>{boardColumn.name}</td>
-                  <td>{boardColumn.board ? <Link to={`board/${boardColumn.board.id}`}>{boardColumn.board.id}</Link> : ''}</td>
+                  <td>{boardColumn.board ? <Link to={`board/${boardColumn.board.id}`}>{boardColumn.board.name}</Link> : ''}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${boardColumn.id}`} color="info" size="sm">

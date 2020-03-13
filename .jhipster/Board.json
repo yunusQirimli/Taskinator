@@ -25,7 +25,7 @@
             "otherEntityName": "project",
             "otherEntityRelationshipName": "boards",
             "relationshipName": "project",
-            "otherEntityField": "id"
+            "otherEntityField": "name"
         }
     ],
     "changelogDate": "20200310174700",

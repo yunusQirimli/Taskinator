@@ -40,13 +40,13 @@ export const CommentDetail = (props: ICommentDetailProps) => {
             <TextFormat value={commentEntity.createDate} type="date" format={APP_LOCAL_DATE_FORMAT} />
           </dd>
           <dt>
-            <Translate contentKey="taskinatorApp.comment.task">Task</Translate>
-          </dt>
-          <dd>{commentEntity.task ? commentEntity.task.name : ''}</dd>
-          <dt>
             <Translate contentKey="taskinatorApp.comment.applicationUser">Application User</Translate>
           </dt>
           <dd>{commentEntity.applicationUser ? commentEntity.applicationUser.id : ''}</dd>
+          <dt>
+            <Translate contentKey="taskinatorApp.comment.task">Task</Translate>
+          </dt>
+          <dd>{commentEntity.task ? commentEntity.task.name : ''}</dd>
         </dl>
         <Button tag={Link} to="/comment" replace color="info">
           <FontAwesomeIcon icon="arrow-left" />{' '}

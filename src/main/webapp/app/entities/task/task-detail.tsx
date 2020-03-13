@@ -86,11 +86,11 @@ export const TaskDetail = (props: ITaskDetailProps) => {
           <dt>
             <Translate contentKey="taskinatorApp.task.parentTask">Parent Task</Translate>
           </dt>
-          <dd>{taskEntity.parentTask ? taskEntity.parentTask.id : ''}</dd>
+          <dd>{taskEntity.parentTask ? taskEntity.parentTask.name : ''}</dd>
           <dt>
             <Translate contentKey="taskinatorApp.task.boardColumn">Board Column</Translate>
           </dt>
-          <dd>{taskEntity.boardColumn ? taskEntity.boardColumn.id : ''}</dd>
+          <dd>{taskEntity.boardColumn ? taskEntity.boardColumn.name : ''}</dd>
           <dt>
             <Translate contentKey="taskinatorApp.task.applicationUser">Application User</Translate>
           </dt>

@@ -100,8 +100,8 @@ export const Task = (props: ITaskProps) => {
                   <td>
                     <TextFormat type="date" value={task.completeDate} format={APP_LOCAL_DATE_FORMAT} />
                   </td>
-                  <td>{task.parentTask ? <Link to={`task/${task.parentTask.id}`}>{task.parentTask.id}</Link> : ''}</td>
-                  <td>{task.boardColumn ? <Link to={`board-column/${task.boardColumn.id}`}>{task.boardColumn.id}</Link> : ''}</td>
+                  <td>{task.parentTask ? <Link to={`task/${task.parentTask.id}`}>{task.parentTask.name}</Link> : ''}</td>
+                  <td>{task.boardColumn ? <Link to={`board-column/${task.boardColumn.id}`}>{task.boardColumn.name}</Link> : ''}</td>
                   <td>
                     {task.applicationUser ? <Link to={`application-user/${task.applicationUser.id}`}>{task.applicationUser.id}</Link> : ''}
                   </td>

@@ -38,7 +38,7 @@ export const BoardDetail = (props: IBoardDetailProps) => {
           <dt>
             <Translate contentKey="taskinatorApp.board.project">Project</Translate>
           </dt>
-          <dd>{boardEntity.project ? boardEntity.project.id : ''}</dd>
+          <dd>{boardEntity.project ? boardEntity.project.name : ''}</dd>
         </dl>
         <Button tag={Link} to="/board" replace color="info">
           <FontAwesomeIcon icon="arrow-left" />{' '}

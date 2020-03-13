@@ -41,7 +41,7 @@
             "otherEntityName": "projectState",
             "otherEntityRelationshipName": "project",
             "relationshipName": "projectState",
-            "otherEntityField": "id"
+            "otherEntityField": "name"
         },
         {
             "relationshipType": "many-to-many",

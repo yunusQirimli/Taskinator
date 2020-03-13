@@ -100,7 +100,7 @@ export const ApplicationUserUpdate = (props: IApplicationUserUpdateProps) => {
                   {users
                     ? users.map((otherEntity, index) => (
                         <option value={index} key={otherEntity.id}>
-                          {otherEntity.id}
+                          {otherEntity.email}
                         </option>
                       ))
                     : null}
@@ -122,7 +122,7 @@ export const ApplicationUserUpdate = (props: IApplicationUserUpdateProps) => {
                   {teams
                     ? teams.map(otherEntity => (
                         <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.id}
+                          {otherEntity.name}
                         </option>
                       ))
                     : null}
@@ -144,7 +144,7 @@ export const ApplicationUserUpdate = (props: IApplicationUserUpdateProps) => {
                   {projects
                     ? projects.map(otherEntity => (
                         <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.id}
+                          {otherEntity.name}
                         </option>
                       ))
                     : null}

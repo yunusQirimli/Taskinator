@@ -7,7 +7,7 @@
             "otherEntityName": "user",
             "otherEntityRelationshipName": "applicationUser",
             "relationshipName": "user",
-            "otherEntityField": "id",
+            "otherEntityField": "email",
             "ownerSide": true
         },
         {
@@ -33,7 +33,7 @@
             "otherEntityName": "team",
             "otherEntityRelationshipName": "applicationUsers",
             "relationshipName": "teams",
-            "otherEntityField": "id",
+            "otherEntityField": "name",
             "ownerSide": true
         },
         {
@@ -41,7 +41,7 @@
             "otherEntityName": "project",
             "otherEntityRelationshipName": "applicationUsers",
             "relationshipName": "projects",
-            "otherEntityField": "id",
+            "otherEntityField": "name",
             "ownerSide": true
         }
     ],

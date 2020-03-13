@@ -19,17 +19,17 @@
         },
         {
             "relationshipType": "many-to-one",
-            "otherEntityName": "task",
-            "otherEntityRelationshipName": "comment",
-            "relationshipName": "task",
-            "otherEntityField": "name"
-        },
-        {
-            "relationshipType": "many-to-one",
             "otherEntityName": "applicationUser",
             "otherEntityRelationshipName": "comment",
             "relationshipName": "applicationUser",
             "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "task",
+            "otherEntityRelationshipName": "comments",
+            "relationshipName": "task",
+            "otherEntityField": "name"
         }
     ],
     "changelogDate": "20200310175000",

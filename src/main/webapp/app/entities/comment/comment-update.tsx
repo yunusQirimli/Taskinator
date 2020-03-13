@@ -7,10 +7,10 @@ import { Translate, translate, ICrudGetAction, ICrudGetAllAction, ICrudPutAction
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IRootState } from 'app/shared/reducers';
 
-import { ITask } from 'app/shared/model/task.model';
-import { getEntities as getTasks } from 'app/entities/task/task.reducer';
 import { IApplicationUser } from 'app/shared/model/application-user.model';
 import { getEntities as getApplicationUsers } from 'app/entities/application-user/application-user.reducer';
+import { ITask } from 'app/shared/model/task.model';
+import { getEntities as getTasks } from 'app/entities/task/task.reducer';
 import { getEntity, updateEntity, createEntity, reset } from './comment.reducer';
 import { IComment } from 'app/shared/model/comment.model';
 import { convertDateTimeFromServer, convertDateTimeToServer, displayDefaultDateTime } from 'app/shared/util/date-utils';
@@ -19,11 +19,11 @@ import { mapIdList } from 'app/shared/util/entity-utils';
 export interface ICommentUpdateProps extends StateProps, DispatchProps, RouteComponentProps<{ id: string }> {}
 
 export const CommentUpdate = (props: ICommentUpdateProps) => {
-  const [taskId, setTaskId] = useState('0');
   const [applicationUserId, setApplicationUserId] = useState('0');
+  const [taskId, setTaskId] = useState('0');
   const [isNew, setIsNew] = useState(!props.match.params || !props.match.params.id);
 
-  const { commentEntity, tasks, applicationUsers, loading, updating } = props;
+  const { commentEntity, applicationUsers, tasks, loading, updating } = props;
 
   const handleClose = () => {
     props.history.push('/comment');
@@ -36,8 +36,8 @@ export const CommentUpdate = (props: ICommentUpdateProps) => {
       props.getEntity(props.match.params.id);
     }
 
-    props.getTasks();
     props.getApplicationUsers();
+    props.getTasks();
   }, []);
 
   useEffect(() => {
@@ -97,21 +97,6 @@ export const CommentUpdate = (props: ICommentUpdateProps) => {
                 <AvField id="comment-createDate" type="date" className="form-control" name="createDate" />
               </AvGroup>
               <AvGroup>
-                <Label for="comment-task">
-                  <Translate contentKey="taskinatorApp.comment.task">Task</Translate>
-                </Label>
-                <AvInput id="comment-task" type="select" className="form-control" name="task.id">
-                  <option value="" key="0" />
-                  {tasks
-                    ? tasks.map(otherEntity => (
-                        <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.name}
-                        </option>
-                      ))
-                    : null}
-                </AvInput>
-              </AvGroup>
-              <AvGroup>
                 <Label for="comment-applicationUser">
                   <Translate contentKey="taskinatorApp.comment.applicationUser">Application User</Translate>
                 </Label>
@@ -121,6 +106,21 @@ export const CommentUpdate = (props: ICommentUpdateProps) => {
                     ? applicationUsers.map(otherEntity => (
                         <option value={otherEntity.id} key={otherEntity.id}>
                           {otherEntity.id}
+                        </option>
+                      ))
+                    : null}
+                </AvInput>
+              </AvGroup>
+              <AvGroup>
+                <Label for="comment-task">
+                  <Translate contentKey="taskinatorApp.comment.task">Task</Translate>
+                </Label>
+                <AvInput id="comment-task" type="select" className="form-control" name="task.id">
+                  <option value="" key="0" />
+                  {tasks
+                    ? tasks.map(otherEntity => (
+                        <option value={otherEntity.id} key={otherEntity.id}>
+                          {otherEntity.name}
                         </option>
                       ))
                     : null}
@@ -148,8 +148,8 @@ export const CommentUpdate = (props: ICommentUpdateProps) => {
 };
 
 const mapStateToProps = (storeState: IRootState) => ({
-  tasks: storeState.task.entities,
   applicationUsers: storeState.applicationUser.entities,
+  tasks: storeState.task.entities,
   commentEntity: storeState.comment.entity,
   loading: storeState.comment.loading,
   updating: storeState.comment.updating,
@@ -157,8 +157,8 @@ const mapStateToProps = (storeState: IRootState) => ({
 });
 
 const mapDispatchToProps = {
-  getTasks,
   getApplicationUsers,
+  getTasks,
   getEntity,
   updateEntity,
   createEntity,

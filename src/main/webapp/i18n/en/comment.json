@@ -19,8 +19,8 @@
       "content": "Content",
       "createDate": "Create Date",
       "likes": "Likes",
-      "task": "Task",
-      "applicationUser": "Application User"
+      "applicationUser": "Application User",
+      "task": "Task"
     }
   }
 }
