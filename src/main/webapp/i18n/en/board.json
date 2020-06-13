@@ -18,7 +18,7 @@
       },
       "name": "Name",
       "boardColumns": "Board Columns",
-      "applicationUser": "Application User",
+      "applicationUser": "Created by",
       "project": "Project"
     }
   }
