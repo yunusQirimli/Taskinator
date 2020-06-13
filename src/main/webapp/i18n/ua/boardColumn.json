@@ -17,6 +17,7 @@
         "title": "Board Column"
       },
       "name": "Name",
+      "index": "Index",
       "tasks": "Tasks",
       "board": "Board"
     }

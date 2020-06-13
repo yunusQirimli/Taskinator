@@ -17,6 +17,7 @@
         "title": "Team"
       },
       "name": "Name",
+      "project": "Project",
       "applicationUsers": "Application Users"
     }
   }

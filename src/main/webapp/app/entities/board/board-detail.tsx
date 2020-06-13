@@ -1,3 +1,4 @@
+/* eslint no-console: 0*/
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link, RouteComponentProps } from 'react-router-dom';
@@ -17,20 +18,15 @@ export const BoardDetail = (props: IBoardDetailProps) => {
     props.getEntity(props.match.params.id);
   }, []);
 
-  const { boardEntity } = props;
+  const { boardEntity} = props;
+  console.log(boardEntity);
   return (
     <Row>
       <Col md="8">
         <h2>
-          <Translate contentKey="taskinatorApp.board.detail.title">Board</Translate> [<b>{boardEntity.id}</b>]
+          <Translate contentKey="taskinatorApp.board.detail.title">Board</Translate> [<b>{boardEntity.name}</b>]
         </h2>
         <dl className="jh-entity-details">
-          <dt>
-            <span id="name">
-              <Translate contentKey="taskinatorApp.board.name">Name</Translate>
-            </span>
-          </dt>
-          <dd>{boardEntity.name}</dd>
           <dt>
             <Translate contentKey="taskinatorApp.board.applicationUser">Application User</Translate>
           </dt>
@@ -40,6 +36,12 @@ export const BoardDetail = (props: IBoardDetailProps) => {
           </dt>
           <dd>{boardEntity.project ? boardEntity.project.name : ''}</dd>
         </dl>
+        <div>
+          {boardEntity.boardColumns &&
+            boardEntity.boardColumns.map((boardColumn, i) => (
+            <Link key={`entity-${i}`} to={`board-column/${boardColumn.id}`}>{boardColumn.name}</Link>
+          ))}
+        </div>
         <Button tag={Link} to="/board" replace color="info">
           <FontAwesomeIcon icon="arrow-left" />{' '}
           <span className="d-none d-md-inline">

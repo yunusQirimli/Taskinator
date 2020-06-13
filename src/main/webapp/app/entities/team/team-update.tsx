@@ -7,6 +7,8 @@ import { Translate, translate, ICrudGetAction, ICrudGetAllAction, ICrudPutAction
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IRootState } from 'app/shared/reducers';
 
+import { IProject } from 'app/shared/model/project.model';
+import { getEntities as getProjects } from 'app/entities/project/project.reducer';
 import { IApplicationUser } from 'app/shared/model/application-user.model';
 import { getEntities as getApplicationUsers } from 'app/entities/application-user/application-user.reducer';
 import { getEntity, updateEntity, createEntity, reset } from './team.reducer';
@@ -17,10 +19,11 @@ import { mapIdList } from 'app/shared/util/entity-utils';
 export interface ITeamUpdateProps extends StateProps, DispatchProps, RouteComponentProps<{ id: string }> {}
 
 export const TeamUpdate = (props: ITeamUpdateProps) => {
+  const [projectId, setProjectId] = useState('0');
   const [applicationUsersId, setApplicationUsersId] = useState('0');
   const [isNew, setIsNew] = useState(!props.match.params || !props.match.params.id);
 
-  const { teamEntity, applicationUsers, loading, updating } = props;
+  const { teamEntity, projects, applicationUsers, loading, updating } = props;
 
   const handleClose = () => {
     props.history.push('/team');
@@ -33,6 +36,7 @@ export const TeamUpdate = (props: ITeamUpdateProps) => {
       props.getEntity(props.match.params.id);
     }
 
+    props.getProjects();
     props.getApplicationUsers();
   }, []);
 
@@ -86,6 +90,21 @@ export const TeamUpdate = (props: ITeamUpdateProps) => {
                 </Label>
                 <AvField id="team-name" type="text" name="name" />
               </AvGroup>
+              <AvGroup>
+                <Label for="team-project">
+                  <Translate contentKey="taskinatorApp.team.project">Project</Translate>
+                </Label>
+                <AvInput id="team-project" type="select" className="form-control" name="project.id">
+                  <option value="" key="0" />
+                  {projects
+                    ? projects.map(otherEntity => (
+                        <option value={otherEntity.id} key={otherEntity.id}>
+                          {otherEntity.name}
+                        </option>
+                      ))
+                    : null}
+                </AvInput>
+              </AvGroup>
               <Button tag={Link} id="cancel-save" to="/team" replace color="info">
                 <FontAwesomeIcon icon="arrow-left" />
                 &nbsp;
@@ -108,6 +127,7 @@ export const TeamUpdate = (props: ITeamUpdateProps) => {
 };
 
 const mapStateToProps = (storeState: IRootState) => ({
+  projects: storeState.project.entities,
   applicationUsers: storeState.applicationUser.entities,
   teamEntity: storeState.team.entity,
   loading: storeState.team.loading,
@@ -116,6 +136,7 @@ const mapStateToProps = (storeState: IRootState) => ({
 });
 
 const mapDispatchToProps = {
+  getProjects,
   getApplicationUsers,
   getEntity,
   updateEntity,

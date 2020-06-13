@@ -40,6 +40,9 @@ export const BoardColumn = (props: IBoardColumnProps) => {
                   <Translate contentKey="taskinatorApp.boardColumn.name">Name</Translate>
                 </th>
                 <th>
+                  <Translate contentKey="taskinatorApp.boardColumn.index">Index</Translate>
+                </th>
+                <th>
                   <Translate contentKey="taskinatorApp.boardColumn.board">Board</Translate>
                 </th>
                 <th />
@@ -54,6 +57,7 @@ export const BoardColumn = (props: IBoardColumnProps) => {
                     </Button>
                   </td>
                   <td>{boardColumn.name}</td>
+                  <td>{boardColumn.index}</td>
                   <td>{boardColumn.board ? <Link to={`board/${boardColumn.board.id}`}>{boardColumn.board.name}</Link> : ''}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">

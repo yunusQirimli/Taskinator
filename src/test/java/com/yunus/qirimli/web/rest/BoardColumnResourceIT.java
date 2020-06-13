@@ -33,6 +33,9 @@ public class BoardColumnResourceIT {
     private static final String DEFAULT_NAME = "AAAAAAAAAA";
     private static final String UPDATED_NAME = "BBBBBBBBBB";
 
+    private static final Integer DEFAULT_INDEX = 1;
+    private static final Integer UPDATED_INDEX = 2;
+
     @Autowired
     private BoardColumnRepository boardColumnRepository;
 
@@ -52,7 +55,8 @@ public class BoardColumnResourceIT {
      */
     public static BoardColumn createEntity(EntityManager em) {
         BoardColumn boardColumn = new BoardColumn()
-            .name(DEFAULT_NAME);
+            .name(DEFAULT_NAME)
+            .index(DEFAULT_INDEX);
         return boardColumn;
     }
     /**
@@ -63,7 +67,8 @@ public class BoardColumnResourceIT {
      */
     public static BoardColumn createUpdatedEntity(EntityManager em) {
         BoardColumn boardColumn = new BoardColumn()
-            .name(UPDATED_NAME);
+            .name(UPDATED_NAME)
+            .index(UPDATED_INDEX);
         return boardColumn;
     }
 
@@ -88,6 +93,7 @@ public class BoardColumnResourceIT {
         assertThat(boardColumnList).hasSize(databaseSizeBeforeCreate + 1);
         BoardColumn testBoardColumn = boardColumnList.get(boardColumnList.size() - 1);
         assertThat(testBoardColumn.getName()).isEqualTo(DEFAULT_NAME);
+        assertThat(testBoardColumn.getIndex()).isEqualTo(DEFAULT_INDEX);
     }
 
     @Test
@@ -121,7 +127,8 @@ public class BoardColumnResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(boardColumn.getId().intValue())))
-            .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)));
+            .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)))
+            .andExpect(jsonPath("$.[*].index").value(hasItem(DEFAULT_INDEX)));
     }
     
     @Test
@@ -135,7 +142,8 @@ public class BoardColumnResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(boardColumn.getId().intValue()))
-            .andExpect(jsonPath("$.name").value(DEFAULT_NAME));
+            .andExpect(jsonPath("$.name").value(DEFAULT_NAME))
+            .andExpect(jsonPath("$.index").value(DEFAULT_INDEX));
     }
 
     @Test
@@ -159,7 +167,8 @@ public class BoardColumnResourceIT {
         // Disconnect from session so that the updates on updatedBoardColumn are not directly saved in db
         em.detach(updatedBoardColumn);
         updatedBoardColumn
-            .name(UPDATED_NAME);
+            .name(UPDATED_NAME)
+            .index(UPDATED_INDEX);
 
         restBoardColumnMockMvc.perform(put("/api/board-columns")
             .contentType(MediaType.APPLICATION_JSON)
@@ -171,6 +180,7 @@ public class BoardColumnResourceIT {
         assertThat(boardColumnList).hasSize(databaseSizeBeforeUpdate);
         BoardColumn testBoardColumn = boardColumnList.get(boardColumnList.size() - 1);
         assertThat(testBoardColumn.getName()).isEqualTo(UPDATED_NAME);
+        assertThat(testBoardColumn.getIndex()).isEqualTo(UPDATED_INDEX);
     }
 
     @Test

@@ -1,6 +1,7 @@
 package com.yunus.qirimli.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 
@@ -26,6 +27,10 @@ public class Team implements Serializable {
     @Column(name = "name")
     private String name;
 
+    @ManyToOne
+    @JsonIgnoreProperties("teams")
+    private Project project;
+
     @ManyToMany(mappedBy = "teams")
     @JsonIgnore
     private Set<ApplicationUser> applicationUsers = new HashSet<>();
@@ -50,6 +55,19 @@ public class Team implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Project getProject() {
+        return project;
+    }
+
+    public Team project(Project project) {
+        this.project = project;
+        return this;
+    }
+
+    public void setProject(Project project) {
+        this.project = project;
     }
 
     public Set<ApplicationUser> getApplicationUsers() {

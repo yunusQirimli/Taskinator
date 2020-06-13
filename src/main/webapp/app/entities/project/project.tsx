@@ -45,7 +45,6 @@ export const Project = (props: IProjectProps) => {
               {projectList.map((project, i) => (
                 <tr key={`entity-${i}`}>
                   <td>
-                    {}
                     <Button tag={Link} to={`${match.url}/${project.id}`} color="link" size="sm">
                     {project.name}
                     </Button>

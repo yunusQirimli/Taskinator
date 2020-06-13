@@ -49,6 +49,9 @@ public class Project implements Serializable {
     @OneToMany(mappedBy = "project")
     private Set<ProjectNote> notes = new HashSet<>();
 
+    @OneToMany(mappedBy = "project")
+    private Set<Team> teams = new HashSet<>();
+
     @ManyToOne
     @JsonIgnoreProperties("projects")
     private ProjectState projectState;
@@ -179,6 +182,31 @@ public class Project implements Serializable {
 
     public void setNotes(Set<ProjectNote> projectNotes) {
         this.notes = projectNotes;
+    }
+
+    public Set<Team> getTeams() {
+        return teams;
+    }
+
+    public Project teams(Set<Team> teams) {
+        this.teams = teams;
+        return this;
+    }
+
+    public Project addTeam(Team team) {
+        this.teams.add(team);
+        team.setProject(this);
+        return this;
+    }
+
+    public Project removeTeam(Team team) {
+        this.teams.remove(team);
+        team.setProject(null);
+        return this;
+    }
+
+    public void setTeams(Set<Team> teams) {
+        this.teams = teams;
     }
 
     public ProjectState getProjectState() {

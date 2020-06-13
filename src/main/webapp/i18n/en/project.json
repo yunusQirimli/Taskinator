@@ -23,6 +23,7 @@
       "closeDate": "Close Date",
       "boards": "Boards",
       "notes": "Notes",
+      "team": "Team",
       "projectState": "Project State",
       "applicationUsers": "Application Users"
     }

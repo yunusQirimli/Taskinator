@@ -39,6 +39,9 @@ export const Team = (props: ITeamProps) => {
                 <th>
                   <Translate contentKey="taskinatorApp.team.name">Name</Translate>
                 </th>
+                <th>
+                  <Translate contentKey="taskinatorApp.team.project">Project</Translate>
+                </th>
                 <th />
               </tr>
             </thead>
@@ -51,6 +54,7 @@ export const Team = (props: ITeamProps) => {
                     </Button>
                   </td>
                   <td>{team.name}</td>
+                  <td>{team.project ? <Link to={`project/${team.project.id}`}>{team.project.name}</Link> : ''}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${team.id}`} color="info" size="sm">

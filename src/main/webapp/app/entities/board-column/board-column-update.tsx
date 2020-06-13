@@ -87,6 +87,12 @@ export const BoardColumnUpdate = (props: IBoardColumnUpdateProps) => {
                 <AvField id="board-column-name" type="text" name="name" />
               </AvGroup>
               <AvGroup>
+                <Label id="indexLabel" for="board-column-index">
+                  <Translate contentKey="taskinatorApp.boardColumn.index">Index</Translate>
+                </Label>
+                <AvField id="board-column-index" type="string" className="form-control" name="index" />
+              </AvGroup>
+              <AvGroup>
                 <Label for="board-column-board">
                   <Translate contentKey="taskinatorApp.boardColumn.board">Board</Translate>
                 </Label>

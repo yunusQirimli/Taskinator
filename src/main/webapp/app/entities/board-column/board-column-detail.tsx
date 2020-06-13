@@ -32,6 +32,12 @@ export const BoardColumnDetail = (props: IBoardColumnDetailProps) => {
           </dt>
           <dd>{boardColumnEntity.name}</dd>
           <dt>
+            <span id="index">
+              <Translate contentKey="taskinatorApp.boardColumn.index">Index</Translate>
+            </span>
+          </dt>
+          <dd>{boardColumnEntity.index}</dd>
+          <dt>
             <Translate contentKey="taskinatorApp.boardColumn.board">Board</Translate>
           </dt>
           <dd>{boardColumnEntity.board ? boardColumnEntity.board.name : ''}</dd>

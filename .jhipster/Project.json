@@ -37,6 +37,12 @@
             "relationshipName": "notes"
         },
         {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "team",
+            "otherEntityRelationshipName": "project",
+            "relationshipName": "team"
+        },
+        {
             "relationshipType": "many-to-one",
             "otherEntityName": "projectState",
             "otherEntityRelationshipName": "project",

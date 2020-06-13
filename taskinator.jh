@@ -34,6 +34,7 @@ entity Board {
 
 entity BoardColumn {
 	name String
+    index Integer
 }
 
 entity Task {
@@ -97,6 +98,7 @@ relationship ManyToOne {
 
 relationship OneToMany {
 	Project{notes} to ProjectNote{project(name)}
+	Project{team(name)} to Team{project(name)}
 }
 
 relationship ManyToMany {

@@ -8,6 +8,13 @@
     ],
     "relationships": [
         {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "project",
+            "otherEntityRelationshipName": "team",
+            "relationshipName": "project",
+            "otherEntityField": "name"
+        },
+        {
             "relationshipType": "many-to-many",
             "otherEntityName": "applicationUser",
             "otherEntityRelationshipName": "teams",

@@ -31,6 +31,10 @@ export const TeamDetail = (props: ITeamDetailProps) => {
             </span>
           </dt>
           <dd>{teamEntity.name}</dd>
+          <dt>
+            <Translate contentKey="taskinatorApp.team.project">Project</Translate>
+          </dt>
+          <dd>{teamEntity.project ? teamEntity.project.name : ''}</dd>
         </dl>
         <Button tag={Link} to="/team" replace color="info">
           <FontAwesomeIcon icon="arrow-left" />{' '}

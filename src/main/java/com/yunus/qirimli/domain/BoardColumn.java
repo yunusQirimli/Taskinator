@@ -26,6 +26,9 @@ public class BoardColumn implements Serializable {
     @Column(name = "name")
     private String name;
 
+    @Column(name = "index")
+    private Integer index;
+
     @OneToMany(mappedBy = "boardColumn")
     private Set<Task> tasks = new HashSet<>();
 
@@ -53,6 +56,19 @@ public class BoardColumn implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Integer getIndex() {
+        return index;
+    }
+
+    public BoardColumn index(Integer index) {
+        this.index = index;
+        return this;
+    }
+
+    public void setIndex(Integer index) {
+        this.index = index;
     }
 
     public Set<Task> getTasks() {
@@ -115,6 +131,7 @@ public class BoardColumn implements Serializable {
         return "BoardColumn{" +
             "id=" + getId() +
             ", name='" + getName() + "'" +
+            ", index=" + getIndex() +
             "}";
     }
 }

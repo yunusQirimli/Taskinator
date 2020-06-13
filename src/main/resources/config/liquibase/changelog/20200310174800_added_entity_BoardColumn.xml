@@ -18,6 +18,9 @@
             <column name="name" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+            <column name="index" type="integer">
+                <constraints nullable="true" />
+            </column>
             <column name="board_id" type="bigint">
                 <constraints nullable="true" />
             </column>
@@ -45,6 +48,7 @@
                   tableName="board_column">
             <column name="id" type="numeric"/>
             <column name="name" type="string"/>
+            <column name="index" type="numeric"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
         </loadData>
     </changeSet>
