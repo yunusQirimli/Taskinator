@@ -22,7 +22,7 @@ export const ProjectDetail = (props: IProjectDetailProps) => {
     <Row>
       <Col md="8">
         <h2>
-          <Translate contentKey="taskinatorApp.project.detail.title">Project</Translate> [<b>{projectEntity.id}</b>]
+          <Translate contentKey="taskinatorApp.project.detail.title">Project</Translate>
         </h2>
         <dl className="jh-entity-details">
           <dt>
