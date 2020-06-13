@@ -34,49 +34,21 @@ export const Project = (props: IProjectProps) => {
             <thead>
               <tr>
                 <th>
-                  <Translate contentKey="global.field.id">ID</Translate>
-                </th>
-                <th>
                   <Translate contentKey="taskinatorApp.project.name">Name</Translate>
-                </th>
-                <th>
-                  <Translate contentKey="taskinatorApp.project.color">Color</Translate>
-                </th>
-                <th>
-                  <Translate contentKey="taskinatorApp.project.createDate">Create Date</Translate>
-                </th>
-                <th>
-                  <Translate contentKey="taskinatorApp.project.modificationDate">Modification Date</Translate>
-                </th>
-                <th>
-                  <Translate contentKey="taskinatorApp.project.closeDate">Close Date</Translate>
                 </th>
                 <th>
                   <Translate contentKey="taskinatorApp.project.projectState">Project State</Translate>
                 </th>
-                <th />
               </tr>
             </thead>
             <tbody>
               {projectList.map((project, i) => (
                 <tr key={`entity-${i}`}>
                   <td>
+                    {}
                     <Button tag={Link} to={`${match.url}/${project.id}`} color="link" size="sm">
-                      {project.id}
+                    {project.name}
                     </Button>
-                  </td>
-                  <td>{project.name}</td>
-                  <td>
-                    <Translate contentKey={`taskinatorApp.Color.${project.color}`} />
-                  </td>
-                  <td>
-                    <TextFormat type="date" value={project.createDate} format={APP_LOCAL_DATE_FORMAT} />
-                  </td>
-                  <td>
-                    <TextFormat type="date" value={project.modificationDate} format={APP_LOCAL_DATE_FORMAT} />
-                  </td>
-                  <td>
-                    <TextFormat type="date" value={project.closeDate} format={APP_LOCAL_DATE_FORMAT} />
                   </td>
                   <td>
                     {project.projectState ? <Link to={`project-state/${project.projectState.id}`}>{project.projectState.name}</Link> : ''}
