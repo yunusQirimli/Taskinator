@@ -38,8 +38,8 @@ export const PasswordPage = (props: IUserPasswordProps) => {
           <AvForm id="password-form" onValidSubmit={handleValidSubmit}>
             <AvField
               name="currentPassword"
-              label={translate('global.form.currentpassword.label')}
-              placeholder={translate('global.form.currentpassword.placeholder')}
+              label={translate('password.change.current')}
+              placeholder={translate('password.change.current')}
               type="password"
               validate={{
                 required: { value: true, errorMessage: translate('global.messages.validate.newpassword.required') }
