@@ -46,7 +46,7 @@ export const Project = (props: IProjectProps) => {
                 <tr key={`entity-${i}`}>
                   <td>
                     <Button tag={Link} to={`${match.url}/${project.id}`} color="link" size="sm">
-                    {project.name}
+                    <span style={{color:project.color.toLowerCase()}}>{project.name}</span>
                     </Button>
                   </td>
                   <td>
