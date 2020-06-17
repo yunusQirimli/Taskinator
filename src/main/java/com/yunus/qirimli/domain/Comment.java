@@ -30,7 +30,7 @@ public class Comment implements Serializable {
     @Column(name = "create_date")
     private LocalDate createDate;
 
-    @OneToMany(mappedBy = "comment")
+    @OneToMany(mappedBy = "comment", fetch=FetchType.EAGER)
     private Set<CommentLike> likes = new HashSet<>();
 
     @ManyToOne

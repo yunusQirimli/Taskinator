@@ -26,13 +26,13 @@ public class ApplicationUser implements Serializable {
     @JoinColumn(unique = true)
     private User user;
 
-    @OneToMany(mappedBy = "applicationUser")
+    @OneToMany(mappedBy = "applicationUser", fetch=FetchType.EAGER)
     private Set<Board> boards = new HashSet<>();
 
-    @OneToMany(mappedBy = "applicationUser")
+    @OneToMany(mappedBy = "applicationUser", fetch=FetchType.EAGER)
     private Set<Task> tasks = new HashSet<>();
 
-    @OneToMany(mappedBy = "applicationUser")
+    @OneToMany(mappedBy = "applicationUser", fetch=FetchType.EAGER)
     private Set<CommentLike> commentLikes = new HashSet<>();
 
     @ManyToMany

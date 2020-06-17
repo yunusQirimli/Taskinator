@@ -26,7 +26,7 @@ public class Board implements Serializable {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(mappedBy = "board")
+    @OneToMany(mappedBy = "board", fetch=FetchType.EAGER)
     private Set<BoardColumn> boardColumns = new HashSet<>();
 
     @ManyToOne

@@ -43,13 +43,13 @@ public class Project implements Serializable {
     @Column(name = "close_date")
     private LocalDate closeDate;
 
-    @OneToMany(mappedBy = "project")
+    @OneToMany(mappedBy = "project", fetch=FetchType.EAGER)
     private Set<Board> boards = new HashSet<>();
 
-    @OneToMany(mappedBy = "project")
+    @OneToMany(mappedBy = "project", fetch=FetchType.EAGER)
     private Set<ProjectNote> notes = new HashSet<>();
 
-    @OneToMany(mappedBy = "project")
+    @OneToMany(mappedBy = "project", fetch=FetchType.EAGER)
     private Set<Team> teams = new HashSet<>();
 
     @ManyToOne
