@@ -1,30 +1,61 @@
 /* eslint no-console: 0*/
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
-import { Link, RouteComponentProps } from 'react-router-dom';
-import { Button, Row, Col } from 'reactstrap';
-import { Translate, ICrudGetAction } from 'react-jhipster';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import './board-detail.css';
+import React, {useEffect} from 'react';
+import {connect} from 'react-redux';
+import {Link, RouteComponentProps} from 'react-router-dom';
+import {Button, Col, Row} from 'reactstrap';
+import {Translate} from 'react-jhipster';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
-import { IRootState } from 'app/shared/reducers';
-import { getEntity } from './board.reducer';
-import { IBoard } from 'app/shared/model/board.model';
-import { APP_DATE_FORMAT, APP_LOCAL_DATE_FORMAT } from 'app/config/constants';
+import {IRootState} from 'app/shared/reducers';
+import {getEntity} from './board.reducer';
 
-export interface IBoardDetailProps extends StateProps, DispatchProps, RouteComponentProps<{ id: string }> {}
+export interface IBoardDetailProps extends StateProps, DispatchProps, RouteComponentProps<{ id: string }> {
+}
+
+const BoardTask = props => {
+
+  const task = props.task;
+
+  return (
+    <div className={"taskCard"}>
+      <Link to={`/task/${task.id}`}>
+        {task.name}
+      </Link>
+    </div>
+  )
+};
+
+const BoardColumn = props => {
+
+  const boardColumn = props.boardColumn;
+
+  return (
+    <div className={`boardColumn ${boardColumn.name}`}>
+      <h1 className="boardColumn__title">{boardColumn.name}</h1>
+      <div className="boardColumn__taskList">
+        {boardColumn.tasks && boardColumn.tasks.map((task) => (
+          <BoardTask key={task.id} task={task}/>
+        ))}
+      </div>
+    </div>
+  )
+};
+
 
 export const BoardDetail = (props: IBoardDetailProps) => {
   useEffect(() => {
     props.getEntity(props.match.params.id);
   }, []);
 
-  const { boardEntity} = props;
-  console.log(boardEntity);
+  const {boardEntity} = props;
+
   return (
-    <Row>
+    <Row className="justify-content-center">
       <Col md="8">
         <h2>
-          <Translate contentKey="taskinatorApp.board.detail.title">Board</Translate> [<b>{boardEntity.name}</b>]
+          <Translate
+            contentKey="taskinatorApp.board.detail.title">Board</Translate> [<b>{boardEntity.name}</b>]
         </h2>
         <dl className="jh-entity-details">
           <dt>
@@ -36,35 +67,37 @@ export const BoardDetail = (props: IBoardDetailProps) => {
           </dt>
           <dd>{boardEntity.project ? boardEntity.project.name : ''}</dd>
         </dl>
-        <div>
-          {boardEntity.boardColumns &&
-            boardEntity.boardColumns.map((boardColumn, i) => (
-            <Link key={`entity-${i}`} to={`board-column/${boardColumn.id}`}>{boardColumn.name}</Link>
-          ))}
-        </div>
         <Button tag={Link} to="/board" replace color="info">
-          <FontAwesomeIcon icon="arrow-left" />{' '}
+          <FontAwesomeIcon icon="arrow-left"/>{' '}
           <span className="d-none d-md-inline">
             <Translate contentKey="entity.action.back">Back</Translate>
           </span>
         </Button>
         &nbsp;
         <Button tag={Link} to={`/board/${boardEntity.id}/edit`} replace color="primary">
-          <FontAwesomeIcon icon="pencil-alt" />{' '}
+          <FontAwesomeIcon icon="pencil-alt"/>{' '}
           <span className="d-none d-md-inline">
             <Translate contentKey="entity.action.edit">Edit</Translate>
           </span>
         </Button>
+        <div className="parentBoard">
+          <div className="board">
+            {boardEntity.boardColumns &&
+            boardEntity.boardColumns.map((boardColumn, i) => (
+              <BoardColumn key={boardColumn.id} boardColumn={boardColumn}/>
+            ))}
+          </div>
+        </div>
       </Col>
     </Row>
   );
 };
 
-const mapStateToProps = ({ board }: IRootState) => ({
+const mapStateToProps = ({board}: IRootState) => ({
   boardEntity: board.entity
 });
 
-const mapDispatchToProps = { getEntity };
+const mapDispatchToProps = {getEntity};
 
 type StateProps = ReturnType<typeof mapStateToProps>;
 type DispatchProps = typeof mapDispatchToProps;

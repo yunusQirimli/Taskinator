@@ -1,0 +1,71 @@
+.board {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  padding: 15px;
+  min-width: 1000px;
+  width: 80%;
+  margin: 0 auto;
+  align-content: stretch;
+  vertical-align: middle;
+}
+
+.boardColumn {
+  font-family: 'Lato', helvetica, Arial, Sans-serif;
+  flex-basis: 300px;
+  flex-grow: 1;
+  margin: 0 5px;
+}
+
+.boardColumn .boardColumn__title {
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: normal;
+  margin: 0 5px 0 0;
+  word-wrap: break-word;
+}
+.boardColumn .boardColumn__taskList {
+  background: #f5f5f5;
+  padding: 20px 10px;
+  min-height: 600px;
+  height: 600px;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.boardColumn.boardColumn--DONE .taskCard {
+  opacity: 0.7;
+}
+.boardColumn.boardColumn--DONE .taskCard .taskCard__title {
+  text-decoration: line-through;
+}
+
+.taskCard {
+  font-family: 'Lato', helvetica, Arial, Sans-serif;
+  border: 1px solid #e0e1e2;
+  border-radius: 5px;
+  padding: 15px 15px 10px 15px;
+  background: white;
+  position: relative;
+  margin-bottom: 5px;
+  box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.06);
+}
+.taskCard:hover {
+  cursor: pointer;
+}
+.taskCard:after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  left: 5px;
+  width: 4px;
+  background: red;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
