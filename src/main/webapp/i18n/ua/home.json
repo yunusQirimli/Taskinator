@@ -1,19 +1,16 @@
 {
   "home": {
-    "title": "Ласкаво просимо, Java hipster!",
+    "title": "Ласкаво просимо!",
     "subtitle": "Це ваша домашня сторінка",
     "logged": {
       "message": "Ви ввійшли як користувач \"{{username}}\"."
     },
-    "question": "Якщо у вас виникли питання по JHipster:",
+    "question": "Якщо у вас виникли питання з Taskinator:",
     "link": {
-      "homepage": "Домашня сторінка JHipster",
-      "stackoverflow": "JHipster на Stack Overflow",
-      "bugtracker": "Баг трекер JHipster",
-      "chat": "Публічна чат кімната JHipster ",
-      "follow": "Користувач @jhipster в Twitter"
+      "gmail": "Gmail адреса розробника",
+      "telegram": "Telegram профіль розробника"
     },
-    "like": "Якщо вам подобається JHipster, не забудьте дати нам зірку на",
+    "like": "Якщо вам подобається  Taskinator, не забудьте дати зірку на",
     "github": "GitHub"
   }
 }
