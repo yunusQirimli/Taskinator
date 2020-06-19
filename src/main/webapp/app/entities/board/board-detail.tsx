@@ -18,7 +18,7 @@ const BoardTask = props => {
   const task = props.task;
 
   return (
-    <div className={"taskCard"}>
+    <div className={"taskCard"} style={{borderColor: task.color.toLowerCase()}}>
       <Link to={`/task/${task.id}`}>
         {task.name}
       </Link>
