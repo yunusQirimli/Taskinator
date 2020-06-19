@@ -42,7 +42,9 @@ export const CommentDetail = (props: ICommentDetailProps) => {
           <dt>
             <Translate contentKey="taskinatorApp.comment.applicationUser">Application User</Translate>
           </dt>
-          <dd>{commentEntity.applicationUser ? commentEntity.applicationUser.id : ''}</dd>
+          <dd>{commentEntity.applicationUser && commentEntity.applicationUser.user ?
+            commentEntity.applicationUser.user.firstName + ' ' + commentEntity.applicationUser.user.lastName : ''}
+          </dd>
           <dt>
             <Translate contentKey="taskinatorApp.comment.task">Task</Translate>
           </dt>

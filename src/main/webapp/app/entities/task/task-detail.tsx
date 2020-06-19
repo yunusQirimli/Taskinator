@@ -94,7 +94,9 @@ export const TaskDetail = (props: ITaskDetailProps) => {
           <dt>
             <Translate contentKey="taskinatorApp.task.applicationUser">Application User</Translate>
           </dt>
-          <dd>{taskEntity.applicationUser ? taskEntity.applicationUser.id : ''}</dd>
+          <dd>{taskEntity.applicationUser && taskEntity.applicationUser.user ?
+            taskEntity.applicationUser.user.firstName + ' ' + taskEntity.applicationUser.user.lastName : ''}
+          </dd>
         </dl>
         <Button tag={Link} to="/task" replace color="info">
           <FontAwesomeIcon icon="arrow-left" />{' '}

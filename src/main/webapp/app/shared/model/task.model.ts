@@ -3,6 +3,7 @@ import { IComment } from 'app/shared/model/comment.model';
 import { IBoardColumn } from 'app/shared/model/board-column.model';
 import { IApplicationUser } from 'app/shared/model/application-user.model';
 import { Color } from 'app/shared/model/enumerations/color.model';
+import { IUser } from 'app/shared/model/user.model';
 
 export interface ITask {
   id?: number;
@@ -19,6 +20,7 @@ export interface ITask {
   parentTask?: ITask;
   boardColumn?: IBoardColumn;
   applicationUser?: IApplicationUser;
+  user?: IUser;
 }
 
 export const defaultValue: Readonly<ITask> = {};

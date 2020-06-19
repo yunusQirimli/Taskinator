@@ -103,10 +103,10 @@ export const CommentUpdate = (props: ICommentUpdateProps) => {
                 <AvInput id="comment-applicationUser" type="select" className="form-control" name="applicationUser.id">
                   <option value="" key="0" />
                   {applicationUsers
-                    ? applicationUsers.map(otherEntity => (
+                    ? applicationUsers.map(otherEntity => (otherEntity.user ?
                         <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.id}
-                        </option>
+                          {otherEntity.user.firstName} {otherEntity.user.lastName}
+                        </option> : ''
                       ))
                     : null}
                 </AvInput>

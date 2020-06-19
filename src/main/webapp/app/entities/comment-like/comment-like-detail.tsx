@@ -32,7 +32,9 @@ export const CommentLikeDetail = (props: ICommentLikeDetailProps) => {
           <dt>
             <Translate contentKey="taskinatorApp.commentLike.applicationUser">Application User</Translate>
           </dt>
-          <dd>{commentLikeEntity.applicationUser ? commentLikeEntity.applicationUser.id : ''}</dd>
+          <dd>{commentLikeEntity.applicationUser && commentLikeEntity.applicationUser.user ?
+            commentLikeEntity.applicationUser.user.firstName + ' ' + commentLikeEntity.applicationUser.user.lastName : ''}
+          </dd>
         </dl>
         <Button tag={Link} to="/comment-like" replace color="info">
           <FontAwesomeIcon icon="arrow-left" />{' '}

@@ -61,7 +61,9 @@ export const BoardDetail = (props: IBoardDetailProps) => {
           <dt>
             <Translate contentKey="taskinatorApp.board.applicationUser">Application User</Translate>
           </dt>
-          <dd>{boardEntity.applicationUser ? boardEntity.applicationUser.id : ''}</dd>
+          <dd>{boardEntity.applicationUser && boardEntity.applicationUser.user ?
+            boardEntity.applicationUser.user.firstName + ' ' + boardEntity.applicationUser.user.lastName : ''}
+          </dd>
           <dt>
             <Translate contentKey="taskinatorApp.board.project">Project</Translate>
           </dt>
