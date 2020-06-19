@@ -2,13 +2,13 @@
   "error": {
     "title": "Помилка!",
     "http": {
-      "400": "Bad request.",
+      "400": "Не коректний запит",
       "403": "Ви не авторизовані для доступу до цієї сторінки",
       "404": "Сторінку не існує",
-      "405": "The HTTP verb you used is not supported for this URL.",
-      "500": "Internal server error."
+      "405": "HTTP дія, яку ви використали не підтримується цим URL.",
+      "500": "Внутрішня помилка сервера."
     },
-    "concurrencyFailure": "Another user modified this data at the same time as you. Your changes were rejected.",
-    "validation": "Validation error on the server."
+    "concurrencyFailure": "Інший користувач модифікував ці данні одночасно з вами. Ваші зміни не збереглися.",
+    "validation": "Помилка валідації на сервері."
   }
 }

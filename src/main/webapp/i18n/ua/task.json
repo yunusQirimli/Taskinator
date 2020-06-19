@@ -2,33 +2,33 @@
   "taskinatorApp": {
     "task": {
       "home": {
-        "title": "Tasks",
-        "createLabel": "Створити новий Task",
-        "createOrEditLabel": "Створити чи редагувати Task",
-        "notFound": "No Tasks found"
+        "title": "Задачі",
+        "createLabel": "Створити новий Задачу",
+        "createOrEditLabel": "Створити чи редагувати Задачу",
+        "notFound": "Задачі не знайдені"
       },
-      "created": "Новий Task створений з ідентифікатором {{ param }}",
-      "updated": "Task оновлений з ідентифікатором {{ param }}",
-      "deleted": "Task видалений з ідентифікатором {{ param }}",
+      "created": "Нова Задача створена з ідентифікатором {{ param }}",
+      "updated": "Задача оновлена з ідентифікатором {{ param }}",
+      "deleted": "Задача видалена з ідентифікатором {{ param }}",
       "delete": {
-        "question": "Ви впевнені, що хочете видалити Task {{ id }}?"
+        "question": "Ви впевнені, що хочете видалити Задачу {{ id }}?"
       },
       "detail": {
-        "title": "Task"
+        "title": "Задача"
       },
-      "name": "Name",
-      "description": "Description",
-      "color": "Color",
-      "createDate": "Create Date",
-      "modificationDate": "Modification Date",
-      "dueDate": "Due Date",
-      "startDate": "Start Date",
-      "completeDate": "Complete Date",
-      "subTasks": "Sub Tasks",
-      "comments": "Comments",
-      "parentTask": "Parent Task",
-      "boardColumn": "Board Column",
-      "applicationUser": "Application User"
+      "name": "Назва",
+      "description": "Опис",
+      "color": "Колір",
+      "createDate": "Дата створення",
+      "modificationDate": "Дата модифікації",
+      "dueDate": "Кінцевий термін",
+      "startDate": "Дата початку",
+      "completeDate": "Дата закінчення",
+      "subTasks": "Підзадачі",
+      "comments": "Коментарі",
+      "parentTask": "Батьківська задача",
+      "boardColumn": "Стан",
+      "applicationUser": "Виконавець"
     }
   }
 }

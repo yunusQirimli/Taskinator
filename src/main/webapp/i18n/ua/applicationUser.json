@@ -2,26 +2,26 @@
   "taskinatorApp": {
     "applicationUser": {
       "home": {
-        "title": "Application Users",
-        "createLabel": "Створити новий Application User",
-        "createOrEditLabel": "Створити чи редагувати Application User",
-        "notFound": "No Application Users found"
+        "title": "Учасники",
+        "createLabel": "Створити нового Учасника",
+        "createOrEditLabel": "Створити чи редагувати Учасника",
+        "notFound": "Учасники не знайдені"
       },
-      "created": "Новий Application User створений з ідентифікатором {{ param }}",
-      "updated": "Application User оновлений з ідентифікатором {{ param }}",
-      "deleted": "Application User видалений з ідентифікатором {{ param }}",
+      "created": "Новий Користувач створений з ідентифікатором {{ param }}",
+      "updated": "Користувач оновлений з ідентифікатором {{ param }}",
+      "deleted": "Користувач видалений з ідентифікатором {{ param }}",
       "delete": {
-        "question": "Ви впевнені, що хочете видалити Application User {{ id }}?"
+        "question": "Ви впевнені, що хочете видалити Користувача {{ id }}?"
       },
       "detail": {
-        "title": "Application User"
+        "title": "Користувач"
       },
-      "user": "User",
-      "boards": "Boards",
-      "tasks": "Tasks",
-      "commentLikes": "Comment Likes",
-      "teams": "Teams",
-      "projects": "Projects"
+      "user": "Обліковий запис",
+      "boards": "Дошки",
+      "tasks": "Задачі",
+      "commentLikes": "Вподобайки",
+      "teams": "Команди",
+      "projects": "Проекти"
     }
   }
 }

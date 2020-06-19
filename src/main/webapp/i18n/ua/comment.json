@@ -2,25 +2,25 @@
   "taskinatorApp": {
     "comment": {
       "home": {
-        "title": "Comments",
-        "createLabel": "Створити новий Comment",
-        "createOrEditLabel": "Створити чи редагувати Comment",
-        "notFound": "No Comments found"
+        "title": "Коментарі",
+        "createLabel": "Створити новий Коментар",
+        "createOrEditLabel": "Створити чи редагувати Коментар",
+        "notFound": "Коментарі не знайдені"
       },
-      "created": "Новий Comment створений з ідентифікатором {{ param }}",
-      "updated": "Comment оновлений з ідентифікатором {{ param }}",
-      "deleted": "Comment видалений з ідентифікатором {{ param }}",
+      "created": "Новий Коментар створений з ідентифікатором {{ param }}",
+      "updated": "Коментар оновлений з ідентифікатором {{ param }}",
+      "deleted": "Коментар видалений з ідентифікатором {{ param }}",
       "delete": {
-        "question": "Ви впевнені, що хочете видалити Comment {{ id }}?"
+        "question": "Ви впевнені, що хочете видалити Коментар {{ id }}?"
       },
       "detail": {
-        "title": "Comment"
+        "title": "Коментар"
       },
-      "content": "Content",
-      "createDate": "Create Date",
-      "likes": "Likes",
-      "applicationUser": "Application User",
-      "task": "Task"
+      "content": "Вміст",
+      "createDate": "Дата створення",
+      "likes": "Вподобайки",
+      "applicationUser": "Учасник",
+      "task": "Задача"
     }
   }
 }

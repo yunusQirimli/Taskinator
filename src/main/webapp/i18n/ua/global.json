@@ -7,16 +7,16 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Сутності",
-        "applicationUser": "Application User",
-        "team": "Team",
-        "projectState": "Project State",
-        "projectNote": "Project Note",
-        "project": "Project",
-        "board": "Board",
-        "boardColumn": "Board Column",
-        "task": "Task",
-        "comment": "Comment",
-        "commentLike": "Comment Like",
+        "applicationUser": "Учасник",
+        "team": "Команда",
+        "projectState": "Стан проекту",
+        "projectNote": "Запис проекту",
+        "project": "Проект",
+        "board": "Дошка",
+        "boardColumn": "Колонка",
+        "task": "Задача",
+        "comment": "Коментар",
+        "commentLike": "Вподобайка",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
@@ -57,7 +57,7 @@
       "info": {
         "authenticated": {
           "prefix": "Якщо ви хочете",
-          "link": "авторизуватися",
+          "link": " авторизуватися",
           "suffix": ", ви можете спробувати облікові записи за замовчуванням:<br/>- Адмiністратор (логін=\"admin\" і пароль=\"admin\") <br/>- Користувач (логін=\"user\" і пароль=\"user\")."
         },
         "register": {
@@ -137,10 +137,10 @@
     "userexists": "Ім'я користувача вже використовується!",
     "emailexists": "Електронна пошта вже використовується!",
     "idexists": "Новий {{entityName}} не може мати даний ID",
-    "idnull": "Invalid ID",
+    "idnull": "Некоректне ID",
     "file": {
-      "could.not.extract": "Could not extract file",
-      "not.image": "File was expected to be an image but was found to be \"{{ fileType }}\""
+      "could.not.extract": "Невдається витягнути файл",
+      "not.image": "Очікувався файл типу image, але знайдено \"{{ fileType }}\""
     }
   },
   "footer": "Це ваш футер"

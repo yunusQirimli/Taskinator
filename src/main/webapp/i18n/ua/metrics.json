@@ -26,7 +26,7 @@
           "waitedtime": "Час очікування",
           "waitedcount": "Очікувана кількість",
           "lockname": "Назва блокування",
-          "stacktrace": "Stacktrace",
+          "stacktrace": "Стектрейс",
           "show": "Показати",
           "hide": "Приховати"
         }

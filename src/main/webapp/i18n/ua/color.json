@@ -2,8 +2,8 @@
   "taskinatorApp": {
     "Color": {
       "null": "",
-      "RED": "RED",
-      "GREEN": "GREEN"
+      "RED": "Червоний",
+      "GREEN": "Зелений"
     }
   }
 }

@@ -3,7 +3,7 @@
     "title": "Активні сесії для [<strong>{{username}}</strong>]",
     "table": {
       "ipaddress": "IP адреса",
-      "useragent": "User Agent",
+      "useragent": "Агент користувача",
       "date": "Дата",
       "button": "Завершити"
     },

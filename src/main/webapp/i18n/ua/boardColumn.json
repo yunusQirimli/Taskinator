@@ -2,24 +2,24 @@
   "taskinatorApp": {
     "boardColumn": {
       "home": {
-        "title": "Board Columns",
-        "createLabel": "Створити новий Board Column",
-        "createOrEditLabel": "Створити чи редагувати Board Column",
-        "notFound": "No Board Columns found"
+        "title": "Колонки",
+        "createLabel": "Створити нову Колонку",
+        "createOrEditLabel": "Створити чи редагувати Колонку",
+        "notFound": "Колонки не знайдено"
       },
-      "created": "Новий Board Column створений з ідентифікатором {{ param }}",
-      "updated": "Board Column оновлений з ідентифікатором {{ param }}",
-      "deleted": "Board Column видалений з ідентифікатором {{ param }}",
+      "created": "Нова Колонка створена з ідентифікатором {{ param }}",
+      "updated": "Колонка оновлена з ідентифікатором {{ param }}",
+      "deleted": "Колонка видалена з ідентифікатором {{ param }}",
       "delete": {
-        "question": "Ви впевнені, що хочете видалити Board Column {{ id }}?"
+        "question": "Ви впевнені, що хочете видалити Колонку {{ id }}?"
       },
       "detail": {
-        "title": "Board Column"
+        "title": "Колонка"
       },
-      "name": "Name",
-      "index": "Index",
-      "tasks": "Tasks",
-      "board": "Board"
+      "name": "Назва",
+      "index": "Індекс",
+      "tasks": "Задачі",
+      "board": "Дошка"
     }
   }
 }

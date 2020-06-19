@@ -2,10 +2,10 @@
   "taskinatorApp": {
     "commentLike": {
       "home": {
-        "title": "Comment Likes",
-        "createLabel": "Створити новий Comment Like",
-        "createOrEditLabel": "Створити чи редагувати Comment Like",
-        "notFound": "No Comment Likes found"
+        "title": "Вподобайки коментарів",
+        "createLabel": "Створити нову Вподобайку",
+        "createOrEditLabel": "Створити чи редагувати Вподобайку",
+        "notFound": "Вподабайки коментарів не знайдені"
       },
       "created": "Новий Comment Like створений з ідентифікатором {{ param }}",
       "updated": "Comment Like оновлений з ідентифікатором {{ param }}",

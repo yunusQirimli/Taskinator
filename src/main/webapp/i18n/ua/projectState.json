@@ -2,21 +2,21 @@
   "taskinatorApp": {
     "projectState": {
       "home": {
-        "title": "Project States",
-        "createLabel": "Створити новий Project State",
-        "createOrEditLabel": "Створити чи редагувати Project State",
-        "notFound": "No Project States found"
+        "title": "Стани проектів",
+        "createLabel": "Створити новий Стан проекту",
+        "createOrEditLabel": "Створити чи редагувати Стан проекту",
+        "notFound": "Стани проектів не знайдені"
       },
-      "created": "Новий Project State створений з ідентифікатором {{ param }}",
-      "updated": "Project State оновлений з ідентифікатором {{ param }}",
-      "deleted": "Project State видалений з ідентифікатором {{ param }}",
+      "created": "Новий Стан проекту створений з ідентифікатором {{ param }}",
+      "updated": "Стан проекту оновлений з ідентифікатором {{ param }}",
+      "deleted": "Стан проекту видалений з ідентифікатором {{ param }}",
       "delete": {
-        "question": "Ви впевнені, що хочете видалити Project State {{ id }}?"
+        "question": "Ви впевнені, що хочете видалити Стан проекту {{ id }}?"
       },
       "detail": {
-        "title": "Project State"
+        "title": "Стан проекту"
       },
-      "name": "Name"
+      "name": "Назва"
     }
   }
 }

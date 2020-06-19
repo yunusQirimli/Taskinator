@@ -2,18 +2,18 @@
   "health": {
     "title": "Стан",
     "refresh.button": "Оновити",
-    "stacktrace": "Stacktrace",
+    "stacktrace": "Стектрейс",
     "details": {
       "details": "Деталі",
       "properties": "Параметри",
-      "name": "Ім'я",
+      "name": "Назва",
       "value": "Значення",
       "error": "Помилка"
     },
     "indicator": {
       "diskSpace": "Місце на диску",
       "mail": "Електронна пошта",
-      "ping": "Application",
+      "ping": "Аплікація",
       "db": "База даних"
     },
     "table": {
@@ -21,7 +21,7 @@
       "status": "Статус"
     },
     "status": {
-      "UNKNOWN": "UNKNOWN",
+      "UNKNOWN": "НЕВІДОМО",
       "UP": "ПРАЦЮЄ",
       "DOWN": "НЕ ПРАЦЮЄ"
     }
