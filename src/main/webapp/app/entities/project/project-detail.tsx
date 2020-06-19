@@ -1,16 +1,29 @@
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
-import { Link, RouteComponentProps } from 'react-router-dom';
-import { Button, Row, Col } from 'reactstrap';
-import { Translate, ICrudGetAction, TextFormat } from 'react-jhipster';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import './project-detail.css';
+import React, {useEffect} from 'react';
+import {connect} from 'react-redux';
+import {Link, RouteComponentProps} from 'react-router-dom';
+import {Button, Col, Row} from 'reactstrap';
+import {TextFormat, Translate} from 'react-jhipster';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
-import { IRootState } from 'app/shared/reducers';
-import { getEntity } from './project.reducer';
-import { IProject } from 'app/shared/model/project.model';
-import { APP_DATE_FORMAT, APP_LOCAL_DATE_FORMAT } from 'app/config/constants';
+import {IRootState} from 'app/shared/reducers';
+import {getEntity} from './project.reducer';
+import {APP_LOCAL_DATE_FORMAT} from 'app/config/constants';
 
 export interface IProjectDetailProps extends StateProps, DispatchProps, RouteComponentProps<{ id: string }> {}
+
+const BoardCard = props => {
+
+  const board = props.board;
+
+  return (
+    <div className="boardCard shadow-light">
+      <Link className="caption" to={`/board/${board.id}`}>
+        {board.name}
+      </Link>
+    </div>
+  )
+};
 
 export const ProjectDetail = (props: IProjectDetailProps) => {
   useEffect(() => {
@@ -65,7 +78,24 @@ export const ProjectDetail = (props: IProjectDetailProps) => {
             <Translate contentKey="taskinatorApp.project.projectState">Project State</Translate>
           </dt>
           <dd>{projectEntity.projectState ? projectEntity.projectState.name : ''}</dd>
+          <dt>
+            <Translate contentKey="taskinatorApp.project.boards">Project Boards</Translate>
+          </dt>
+          <dd>
+            <div className={"bordRow"}>
+              <Link to={`/board/new`} className="createButton btn btn-primary jh-create-entity" id="jh-create-entity">
+                <FontAwesomeIcon icon="plus" />
+                &nbsp;
+                <Translate contentKey="taskinatorApp.board.home.createLabel">Create new Board</Translate>
+              </Link>
+              {projectEntity.boards &&
+              projectEntity.boards.map((board, i) => (
+                <BoardCard key={board.id} board={board}/>
+              ))}
+            </div>
+          </dd>
         </dl>
+
         <Button tag={Link} to="/project" replace color="info">
           <FontAwesomeIcon icon="arrow-left" />{' '}
           <span className="d-none d-md-inline">
