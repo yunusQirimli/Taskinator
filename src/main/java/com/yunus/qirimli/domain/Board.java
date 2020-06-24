@@ -26,15 +26,16 @@ public class Board implements Serializable {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(mappedBy = "board", fetch=FetchType.EAGER)
+    @OneToMany(mappedBy = "board", fetch=FetchType.EAGER, cascade = CascadeType.ALL)
+    @JsonIgnoreProperties(value = {"board"}, allowSetters = true)
     private Set<BoardColumn> boardColumns = new HashSet<>();
 
     @ManyToOne
-    @JsonIgnoreProperties("boards")
+    @JsonIgnoreProperties(value = {"boards"}, allowSetters = true)
     private ApplicationUser applicationUser;
 
     @ManyToOne
-    @JsonIgnoreProperties("boards")
+    @JsonIgnoreProperties(value = {"boards"}, allowSetters = true)
     private Project project;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove

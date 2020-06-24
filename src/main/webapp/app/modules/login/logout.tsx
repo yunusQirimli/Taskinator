@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { IRootState } from 'app/shared/reducers';
 import { logout } from 'app/shared/reducers/authentication';
+import {Translate} from "react-jhipster";
 
 export interface ILogoutProps extends StateProps, DispatchProps {
   idToken: string;
@@ -23,7 +24,7 @@ export const Logout = (props: ILogoutProps) => {
 
   return (
     <div className="p-5">
-      <h4>Logged out successfully!</h4>
+      <Translate contentKey="logout.messages.success">Logged out successfully!</Translate>
     </div>
   );
 };

@@ -103,6 +103,13 @@ export const ProjectUpdate = (props: IProjectUpdateProps) => {
                 >
                   <option value="RED">{translate('taskinatorApp.Color.RED')}</option>
                   <option value="GREEN">{translate('taskinatorApp.Color.GREEN')}</option>
+                  <option value="BLUE">{translate('taskinatorApp.Color.BLUE')}</option>
+                  <option value="YELLOW">{translate('taskinatorApp.Color.YELLOW')}</option>
+                  <option value="ORANGE">{translate('taskinatorApp.Color.ORANGE')}</option>
+                  <option value="PINK">{translate('taskinatorApp.Color.PINK')}</option>
+                  <option value="PURPLE">{translate('taskinatorApp.Color.PURPLE')}</option>
+                  <option value="VIOLET">{translate('taskinatorApp.Color.VIOLET')}</option>
+                  <option value="GREY">{translate('taskinatorApp.Color.GREY')}</option>
                 </AvInput>
               </AvGroup>
               <AvGroup>

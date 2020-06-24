@@ -17,6 +17,8 @@
         "task": "Задача",
         "comment": "Коментар",
         "commentLike": "Вподобайка",
+        "project": "Проект",
+        "task": "Задача",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

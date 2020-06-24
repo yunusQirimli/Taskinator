@@ -46,10 +46,10 @@ public class Project implements Serializable {
     @OneToMany(mappedBy = "project", fetch=FetchType.EAGER)
     private Set<Board> boards = new HashSet<>();
 
-    @OneToMany(mappedBy = "project", fetch=FetchType.EAGER)
+    @OneToMany(mappedBy = "project", fetch=FetchType.EAGER, cascade =  CascadeType.ALL)
     private Set<ProjectNote> notes = new HashSet<>();
 
-    @OneToMany(mappedBy = "project", fetch=FetchType.EAGER)
+    @OneToMany(mappedBy = "project", fetch=FetchType.EAGER, cascade =  CascadeType.ALL)
     private Set<Team> teams = new HashSet<>();
 
     @ManyToOne

@@ -34,40 +34,10 @@ export const Task = (props: ITaskProps) => {
             <thead>
               <tr>
                 <th>
-                  <Translate contentKey="global.field.id">ID</Translate>
-                </th>
-                <th>
                   <Translate contentKey="taskinatorApp.task.name">Name</Translate>
                 </th>
                 <th>
-                  <Translate contentKey="taskinatorApp.task.description">Description</Translate>
-                </th>
-                <th>
-                  <Translate contentKey="taskinatorApp.task.color">Color</Translate>
-                </th>
-                <th>
-                  <Translate contentKey="taskinatorApp.task.createDate">Create Date</Translate>
-                </th>
-                <th>
-                  <Translate contentKey="taskinatorApp.task.modificationDate">Modification Date</Translate>
-                </th>
-                <th>
-                  <Translate contentKey="taskinatorApp.task.dueDate">Due Date</Translate>
-                </th>
-                <th>
-                  <Translate contentKey="taskinatorApp.task.startDate">Start Date</Translate>
-                </th>
-                <th>
-                  <Translate contentKey="taskinatorApp.task.completeDate">Complete Date</Translate>
-                </th>
-                <th>
-                  <Translate contentKey="taskinatorApp.task.parentTask">Parent Task</Translate>
-                </th>
-                <th>
                   <Translate contentKey="taskinatorApp.task.boardColumn">Board Column</Translate>
-                </th>
-                <th>
-                  <Translate contentKey="taskinatorApp.task.applicationUser">Application User</Translate>
                 </th>
                 <th />
               </tr>
@@ -77,34 +47,10 @@ export const Task = (props: ITaskProps) => {
                 <tr key={`entity-${i}`}>
                   <td>
                     <Button tag={Link} to={`${match.url}/${task.id}`} color="link" size="sm">
-                      {task.id}
+                      <span style={{color:task.color.toLowerCase()}}>{task.name}</span>
                     </Button>
                   </td>
-                  <td>{task.name}</td>
-                  <td>{task.description}</td>
-                  <td>
-                    <Translate contentKey={`taskinatorApp.Color.${task.color}`} />
-                  </td>
-                  <td>
-                    <TextFormat type="date" value={task.createDate} format={APP_LOCAL_DATE_FORMAT} />
-                  </td>
-                  <td>
-                    <TextFormat type="date" value={task.modificationDate} format={APP_LOCAL_DATE_FORMAT} />
-                  </td>
-                  <td>
-                    <TextFormat type="date" value={task.dueDate} format={APP_LOCAL_DATE_FORMAT} />
-                  </td>
-                  <td>
-                    <TextFormat type="date" value={task.startDate} format={APP_LOCAL_DATE_FORMAT} />
-                  </td>
-                  <td>
-                    <TextFormat type="date" value={task.completeDate} format={APP_LOCAL_DATE_FORMAT} />
-                  </td>
-                  <td>{task.parentTask ? <Link to={`task/${task.parentTask.id}`}>{task.parentTask.name}</Link> : ''}</td>
                   <td>{task.boardColumn ? <Link to={`board-column/${task.boardColumn.id}`}>{task.boardColumn.name}</Link> : ''}</td>
-                  <td>
-                    {task.applicationUser ? <Link to={`application-user/${task.applicationUser.id}`}>{task.applicationUser.id}</Link> : ''}
-                  </td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${task.id}`} color="info" size="sm">

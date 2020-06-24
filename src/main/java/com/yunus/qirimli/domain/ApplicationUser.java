@@ -1,6 +1,7 @@
 package com.yunus.qirimli.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 
 import java.io.Serializable;
@@ -24,15 +25,19 @@ public class ApplicationUser implements Serializable {
 
     @OneToOne
     @JoinColumn(unique = true)
+    @JsonIgnoreProperties(allowSetters = true)
     private User user;
 
-    @OneToMany(mappedBy = "applicationUser", fetch=FetchType.EAGER)
+    @OneToMany(mappedBy = "applicationUser", fetch=FetchType.EAGER, cascade = CascadeType.ALL)
+    @JsonIgnoreProperties(value = "applicationUser", allowSetters = true)
     private Set<Board> boards = new HashSet<>();
 
-    @OneToMany(mappedBy = "applicationUser", fetch=FetchType.EAGER)
+    @OneToMany(mappedBy = "applicationUser", fetch=FetchType.EAGER, cascade = CascadeType.ALL)
+    @JsonIgnoreProperties(value = "applicationUser", allowSetters = true)
     private Set<Task> tasks = new HashSet<>();
 
-    @OneToMany(mappedBy = "applicationUser", fetch=FetchType.EAGER)
+    @OneToMany(mappedBy = "applicationUser", fetch=FetchType.EAGER, cascade = CascadeType.ALL)
+    @JsonIgnoreProperties(value = "applicationUser", allowSetters = true)
     private Set<CommentLike> commentLikes = new HashSet<>();
 
     @ManyToMany

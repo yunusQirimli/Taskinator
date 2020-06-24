@@ -4,5 +4,5 @@ package com.yunus.qirimli.domain.enumeration;
  * The Color enumeration.
  */
 public enum Color {
-    RED, GREEN
+    RED, GREEN, BLUE, YELLOW, ORANGE, PINK, PURPLE, VIOLET, GREY
 }

@@ -51,10 +51,10 @@ public class Task implements Serializable {
     @Column(name = "complete_date")
     private LocalDate completeDate;
 
-    @OneToMany(mappedBy = "parentTask", fetch=FetchType.EAGER)
+    @OneToMany(mappedBy = "parentTask", fetch=FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<Task> subTasks = new HashSet<>();
 
-    @OneToMany(mappedBy = "task", fetch=FetchType.EAGER)
+    @OneToMany(mappedBy = "task", fetch=FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<Comment> comments = new HashSet<>();
 
     @ManyToOne

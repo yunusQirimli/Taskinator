@@ -12,7 +12,7 @@
         {
             "fieldName": "color",
             "fieldType": "Color",
-            "fieldValues": "RED,GREEN"
+            "fieldValues": "RED,GREEN,BLUE,YELLOW,ORANGE,PINK,PURPLE,VIOLET,GREY"
         },
         {
             "fieldName": "createDate",

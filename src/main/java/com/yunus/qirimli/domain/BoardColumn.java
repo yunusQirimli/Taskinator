@@ -29,7 +29,7 @@ public class BoardColumn implements Serializable {
     @Column(name = "index")
     private Integer index;
 
-    @OneToMany(mappedBy = "boardColumn", fetch=FetchType.EAGER)
+    @OneToMany(mappedBy = "boardColumn", fetch=FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<Task> tasks = new HashSet<>();
 
     @ManyToOne
